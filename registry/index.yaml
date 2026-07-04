@@ -27,7 +27,7 @@ artifacts:
   - {name: constitution,        path: CONSTITUTION.md,             type: kernel-doc, version: 2.2.0, status: active}
   - {name: north-star,          path: NORTH_STAR.md,               type: kernel-doc, version: 1.1.0, status: active}
   - {name: business-compiler,   path: BUSINESS_COMPILER.md,        type: kernel-doc, version: 1.0.0, status: active}
-  - {name: how-to-use,          path: HOW_TO_USE.md,               type: kernel-doc, version: 1.0.0, status: active}
+  - {name: how-to-use,          path: HOW_TO_USE.md,               type: kernel-doc, version: 1.1.0, status: active}
   - {name: first-principles,    path: FIRST_PRINCIPLES.md,         type: kernel-doc, version: 1.0.0, status: active}
   # kernel
   - {name: artifact-spec,       path: kernel/artifact-spec.md,     type: kernel-doc, version: 2.0.0, status: active}

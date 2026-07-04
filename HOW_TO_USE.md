@@ -1,6 +1,6 @@
 ---
 name: how-to-use
-version: 1.0.0
+version: 1.1.0
 status: active
 type: kernel-doc
 description: The beginner's note — how to actually use Atlas OS day to day, written for someone who knows nothing about it.
@@ -11,6 +11,68 @@ description: The beginner's note — how to actually use Atlas OS day to day, wr
 Atlas is a smart filing system + assistant for running businesses. You
 don't code. You do three things: **answer questions, ask for work, and
 say yes or no.** That's the whole job.
+
+---
+
+## Step 0 — Where Atlas is, and how to start talking to it
+
+### Where it lives
+
+Atlas is a **folder of plain files** on this computer:
+
+```
+V:\fable 5
+```
+
+That folder IS Atlas. Every business, every rule, every piece of saved
+knowledge is a readable file inside it. A backup copy lives online in a
+private vault: **github.com/Vartika17/atlas-os** (sign in as Vartika17).
+
+### How to start a session (the normal way)
+
+Atlas has no app of its own. You talk to it through an AI assistant that
+can read and write files. Today that's **Claude Code** (the desktop app on
+this machine); tomorrow it can be any other AI — Atlas doesn't care,
+everything is plain text.
+
+1. Open the **Claude Code** app (or type `claude` in a terminal).
+2. Make sure it's opened in the Atlas folder: `V:\fable 5`.
+   (In the app: open/select that folder as the project.)
+3. Type what you want in plain English. Done — you're using Atlas.
+
+### What to open and read first (in this order)
+
+| Order | Open this file | Why |
+|---|---|---|
+| 1 | `HOW_TO_USE.md` | This note. How to operate it |
+| 2 | `README.md` | The map — what every folder is |
+| 3 | `registry/INDEX.md` | Table of contents of everything that exists |
+| 4 | `businesses/nazaria/DNA.md` | Example of a real business's identity file |
+
+All of them open in Notepad, Word, or any editor — they're just text.
+Reading is always safe; you can't break anything by looking.
+
+### Your first messages — copy these
+
+Just type things like this into the assistant:
+
+- *"Show me what businesses exist in Atlas."*
+- *"What's in the content queue for Nazaria?"*
+- *"Write an Instagram caption for Nazaria about identity systems."*
+- *"Add a new client called <name> for Nazaria."*
+- *"What did Atlas learn last month?"* (it reads the retro files)
+- *"Run Atlas Hour."* (the monthly tidy-up)
+
+You never need special commands. Plain sentences. The assistant reads the
+Atlas files, follows Atlas's rules automatically, and shows you drafts
+for approval.
+
+### If there's no internet / no AI subscription
+
+Atlas still works. A free local AI (Ollama, already installed on this
+machine) can run it — slower and simpler, but everything opens and
+everything is readable by hand. Nothing about Atlas depends on any
+company's service.
 
 ---
 
