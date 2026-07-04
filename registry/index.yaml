@@ -1,0 +1,75 @@
+# Machine-readable registry of all non-archived artifacts.
+# Any agent or script starts here to discover what exists.
+# Update in the same commit that adds/changes an artifact.
+generated: manual   # future: lint script regenerates and verifies this
+artifacts:
+  - name: constitution
+    path: CONSTITUTION.md
+    type: kernel-doc
+    version: 1.0.0
+    status: active
+  - name: artifact-spec
+    path: kernel/artifact-spec.md
+    type: kernel-doc
+    version: 1.0.0
+    status: active
+  - name: versioning
+    path: kernel/versioning.md
+    type: kernel-doc
+    version: 1.0.0
+    status: active
+  - name: portability
+    path: kernel/portability.md
+    type: kernel-doc
+    version: 1.0.0
+    status: active
+  - name: tool-map
+    path: agents/tool-map.md
+    type: kernel-doc
+    version: 1.0.0
+    status: active
+  - name: knowledge-readme
+    path: knowledge/README.md
+    type: kernel-doc
+    version: 1.0.0
+    status: active
+  - name: decision-framework
+    path: frameworks/decision-framework.md
+    type: framework
+    version: 1.0.0
+    status: active
+  - name: blog-post
+    path: prompts/content/blog-post.md
+    type: prompt
+    version: 1.0.0
+    status: active
+    min_capability: medium
+  - name: content-writer
+    path: agents/content-writer.md
+    type: agent
+    version: 1.0.0
+    status: active
+    min_capability: medium
+  - name: content-pipeline
+    path: workflows/content-pipeline.md
+    type: workflow
+    version: 1.0.0
+    status: active
+  - name: adr-template
+    path: templates/adr.md
+    type: template
+    version: 1.0.0
+    status: active
+  - name: retro-template
+    path: templates/retro.md
+    type: template
+    version: 1.0.0
+    status: active
+decisions:
+  - id: ADR-0001
+    path: decisions/0001-plain-text-substrate.md
+    status: accepted
+  - id: ADR-0002
+    path: decisions/0002-kernel-instance-split.md
+    status: accepted
+businesses: []   # add on first real instance
