@@ -1,0 +1,49 @@
+# ─── Secrets: never in a 20-year repo (Constitution Art. I) ───
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+*_rsa
+*_ed25519
+*.credentials
+*credentials*.json
+*secret*
+*token*
+!**/rejections.md
+
+# ─── OS junk ───
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# ─── Editors / tools ───
+.vscode/
+.idea/
+*.swp
+
+# ─── Binaries: assets live outside git, manifests inside (assets/README.md) ───
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.mp4
+*.mov
+*.mp3
+*.wav
+*.zip
+*.7z
+*.psd
+*.ai
+*.fig
+*.pdf
+*.pptx
+*.docx
+*.xlsx
+
+# ─── Scratch ───
+tmp/
+scratch/
+node_modules/

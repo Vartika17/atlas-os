@@ -33,7 +33,7 @@ all of them. `businesses/_template/` is the executable copy of this spec.
 | `automation.md` | What is automated, what deliberately isn't, tool mappings, manual fallbacks |  |
 | `metrics.md` | The 3-7 numbers that matter, current values, review cadence, kill/scale thresholds |  |
 | `knowledge/` | Business-specific facts (market, customers, lessons) — `knowledge` type artifacts | stage 2, searched first |
-| `agents/` | Overrides/extensions of shared agents (shadowing, Art. V.16) | |
+| `agents/` | Overrides/extensions of shared agents (shadowing, Art. V.17) | |
 | `workflows/` | Overrides/extensions of shared workflows | |
 | `output/` | Everything produced: `drafts/`, `published/`, queues. Outputs, never sources | |
 | `decisions/` | Business-scoped ADRs | |

@@ -1,4 +1,4 @@
-# External CTO Review — Atlas OS v0.3.0
+﻿# External CTO Review — Atlas OS v0.3.0
 
 - **Date:** 2026-07-04
 - **Scope:** entire architecture, adversarial. Mandate: find weaknesses, do
@@ -35,7 +35,7 @@ record results in `knowledge/models/`. This is a one-hour test protecting a
 
 "Update index.yaml in the same commit" is a rule enforced by nothing. Manual
 registries have a half-life of weeks. When the registry rots, discovery
-rots, and Constitution Art. III.8 ("check the registry first") becomes
+rots, and Constitution Art. III.9 ("check the registry first") becomes
 theater. **Fix:** a ~100-line dependency-free script (Python/PowerShell)
 that parses frontmatter and regenerates index.yaml + fails on spec
 violations. This is the highest-value automation in the entire capability
