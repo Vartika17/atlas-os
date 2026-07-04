@@ -1,75 +1,64 @@
-# Machine-readable registry of all non-archived artifacts.
-# Any agent or script starts here to discover what exists.
-# Update in the same commit that adds/changes an artifact.
-generated: manual   # future: lint script regenerates and verifies this
+# Atlas OS registry — machine-readable index of all non-archived artifacts.
+# Any agent or script starts here. Updated in the same commit as any artifact change.
+generated: manual   # future: lint script regenerates and verifies
+os:
+  name: atlas-os
+  version: 0.2.0
+layers:
+  - {n: 1,  name: constitution, path: CONSTITUTION.md}
+  - {n: 2,  name: kernel,       path: kernel/}
+  - {n: 3,  name: knowledge,    path: knowledge/}
+  - {n: 4,  name: taste,        path: taste/}
+  - {n: 5,  name: dna,          path: dna/}
+  - {n: 6,  name: agents,       path: agents/}
+  - {n: 7,  name: workflows,    path: workflows/}
+  - {n: 8,  name: frameworks,   path: frameworks/}
+  - {n: 9,  name: learning,     path: learning/}
+  - {n: 10, name: decisions,    path: decisions/}
+  - {n: 11, name: assets,       path: assets/}
+  - {n: 12, name: businesses,   path: businesses/}
+  - {n: 13, name: clients,      path: clients/}
+  - {n: 14, name: registry,     path: registry/}
+  - {n: 15, name: archive,      path: archive/}
 artifacts:
-  - name: constitution
-    path: CONSTITUTION.md
-    type: kernel-doc
-    version: 1.0.0
-    status: active
-  - name: artifact-spec
-    path: kernel/artifact-spec.md
-    type: kernel-doc
-    version: 1.0.0
-    status: active
-  - name: versioning
-    path: kernel/versioning.md
-    type: kernel-doc
-    version: 1.0.0
-    status: active
-  - name: portability
-    path: kernel/portability.md
-    type: kernel-doc
-    version: 1.0.0
-    status: active
-  - name: tool-map
-    path: agents/tool-map.md
-    type: kernel-doc
-    version: 1.0.0
-    status: active
-  - name: knowledge-readme
-    path: knowledge/README.md
-    type: kernel-doc
-    version: 1.0.0
-    status: active
-  - name: decision-framework
-    path: frameworks/decision-framework.md
-    type: framework
-    version: 1.0.0
-    status: active
-  - name: blog-post
-    path: prompts/content/blog-post.md
-    type: prompt
-    version: 1.0.0
-    status: active
-    min_capability: medium
-  - name: content-writer
-    path: agents/content-writer.md
-    type: agent
-    version: 1.0.0
-    status: active
-    min_capability: medium
-  - name: content-pipeline
-    path: workflows/content-pipeline.md
-    type: workflow
-    version: 1.0.0
-    status: active
-  - name: adr-template
-    path: templates/adr.md
-    type: template
-    version: 1.0.0
-    status: active
-  - name: retro-template
-    path: templates/retro.md
-    type: template
-    version: 1.0.0
-    status: active
+  # law + kernel
+  - {name: constitution,        path: CONSTITUTION.md,             type: kernel-doc, version: 2.0.0, status: active}
+  - {name: artifact-spec,       path: kernel/artifact-spec.md,     type: kernel-doc, version: 2.0.0, status: active}
+  - {name: context-chain,       path: kernel/context-chain.md,     type: kernel-doc, version: 1.0.0, status: active}
+  - {name: promotion,           path: kernel/promotion.md,         type: kernel-doc, version: 1.0.0, status: active}
+  - {name: versioning,          path: kernel/versioning.md,        type: kernel-doc, version: 1.0.0, status: active}
+  - {name: portability,         path: kernel/portability.md,       type: kernel-doc, version: 1.0.0, status: active}
+  # taste
+  - {name: taste-readme,        path: taste/README.md,             type: kernel-doc, version: 1.0.0, status: active}
+  - {name: taste-principles,    path: taste/principles.md,         type: taste,      version: 0.1.0, status: draft}
+  - {name: critique-method,     path: taste/critique.md,           type: taste,      version: 1.0.0, status: active}
+  - {name: taste-anti-patterns, path: taste/anti-patterns.md,      type: taste,      version: 0.1.0, status: draft}
+  - {name: taste-references-readme, path: taste/references/README.md, type: kernel-doc, version: 1.0.0, status: active}
+  # dna
+  - {name: genome,              path: dna/genome.md,               type: kernel-doc, version: 1.0.0, status: active}
+  # agents + patterns
+  - {name: tool-map,            path: agents/tool-map.md,          type: kernel-doc, version: 1.0.0, status: active}
+  - {name: content-writer,      path: agents/content-writer.md,    type: agent,      version: 2.0.0, status: active, min_capability: medium}
+  - {name: draft-content,       path: agents/patterns/draft-content.md, type: pattern, version: 2.0.0, status: active, min_capability: medium}
+  - {name: critique,            path: agents/patterns/critique.md, type: pattern,    version: 1.0.0, status: active, min_capability: medium}
+  # workflows
+  - {name: content-pipeline,    path: workflows/content-pipeline.md, type: workflow, version: 2.0.0, status: active}
+  # frameworks
+  - {name: decision-framework,  path: frameworks/decision-framework.md, type: framework, version: 1.0.0, status: active}
+  # learning
+  - {name: learning-readme,     path: learning/README.md,          type: kernel-doc, version: 1.0.0, status: active}
+  - {name: retro-template,      path: learning/retro-template.md,  type: template,   version: 2.0.0, status: active}
+  # decisions
+  - {name: adr-template,        path: decisions/TEMPLATE.md,       type: template,   version: 1.0.0, status: active}
+  # assets / clients / knowledge charters
+  - {name: assets-readme,       path: assets/README.md,            type: kernel-doc, version: 1.0.0, status: active}
+  - {name: clients-readme,      path: clients/README.md,           type: kernel-doc, version: 1.0.0, status: active}
+  - {name: knowledge-readme,    path: knowledge/README.md,         type: kernel-doc, version: 1.0.0, status: active}
 decisions:
-  - id: ADR-0001
-    path: decisions/0001-plain-text-substrate.md
-    status: accepted
-  - id: ADR-0002
-    path: decisions/0002-kernel-instance-split.md
-    status: accepted
-businesses: []   # add on first real instance
+  - {id: ADR-0001, path: decisions/0001-plain-text-substrate.md,          status: accepted}
+  - {id: ADR-0002, path: decisions/0002-kernel-instance-split.md,         status: accepted}
+  - {id: ADR-0003, path: decisions/0003-atlas-os-fifteen-layers.md,       status: accepted}
+  - {id: ADR-0004, path: decisions/0004-knowledge-first-compiled-prompts.md, status: accepted}
+  - {id: ADR-0005, path: decisions/0005-clients-first-class-layer.md,     status: accepted}
+businesses: []   # planned: nazaria, noblegate, qwikstone, mds-lux, mds-essentials
+clients: []

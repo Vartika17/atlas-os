@@ -1,7 +1,8 @@
 ---
-name: retro-template
+name: retro-template-v1
 version: 1.0.0
-status: active
+status: archived
+superseded_by: retro-template
 type: template
 description: End-of-project/month retro. The mechanism that promotes learning into the kernel.
 ---

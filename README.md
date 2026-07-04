@@ -1,66 +1,83 @@
-# Business Operating System (BOS)
+# Atlas OS
 
-One operating system to run every business I own. Websites, marketing, content,
-proposals, and new brands are **outputs** of this system — never the system itself.
+The operating system that runs every business in the portfolio — Nazaria,
+NobleGate, Qwikstone, MD's Lux, MD's Essentials, every future business and
+client engagement. Websites, brands, content, proposals, automation, and AI
+teams are **outputs** of Atlas OS. Never the system itself.
 
-## Design principles
+Not a prompt library. Not an AI toolkit. A portable, plain-text,
+vendor-agnostic operating system designed for a 20+ year horizon.
 
-1. **Compounding over speed.** Every artifact added here must be reusable by the
-   next business. If it only serves one project once, it belongs in that
-   business's `output/` folder, not in the kernel.
-2. **Plain text, forever.** Markdown + YAML frontmatter only. No proprietary
-   formats, no databases, no SaaS dependencies. Readable by a human in 2046 and
-   by an 8B local model today.
-3. **Versioned, always.** Git is the history. Artifacts carry semantic versions
-   in frontmatter. Breaking changes to a contract bump the major version.
-4. **Model-agnostic.** Prompts and agents declare their contract (inputs,
-   outputs, context budget) and never rely on vendor-specific features. They must
-   run on a local LLM via Ollama/llama.cpp as well as any cloud model.
-5. **Kernel/instance split.** Shared logic lives in the kernel. Each business is
-   an instance that inherits the kernel and overrides only what differs.
-6. **Decisions are artifacts.** Every significant choice becomes an ADR in
-   `decisions/`. The reasoning compounds, not just the outcome.
+## The fifteen layers
 
-## Map
+| # | Layer | Path | Charter |
+|---|---|---|---|
+| 1 | Constitution | [CONSTITUTION.md](CONSTITUTION.md) | Law. Amended only by ADR |
+| 2 | Kernel | [kernel/](kernel/) | Specs and contracts only. Small. Stable |
+| 3 | Knowledge | [knowledge/](knowledge/) | Distilled cross-business facts |
+| 4 | Taste | [taste/](taste/) | Creative judgment: principles, critique, references, anti-patterns |
+| 5 | Business DNA | [dna/](dna/) | The genome every business implements |
+| 6 | Agents | [agents/](agents/) | Role charters + prompt patterns (few, slot-based) |
+| 7 | Workflows | [workflows/](workflows/) | Pipelines; retro step mandatory |
+| 8 | Frameworks | [frameworks/](frameworks/) | Reusable thinking tools |
+| 9 | Learning | [learning/](learning/) | Retros + the promotion funnel into kernel |
+| 10 | Decision Logs | [decisions/](decisions/) | ADRs |
+| 11 | Assets | [assets/](assets/) | Metadata manifests; binaries live outside git |
+| 12 | Businesses | [businesses/](businesses/) | Genome-conforming instances |
+| 13 | Clients | [clients/](clients/) | Client records; engagements owned by a business |
+| 14 | Registry | [registry/](registry/) | Index of everything |
+| 15 | Archive | [archive/](archive/) | Deprecated, never deleted |
 
-| Path | What lives there |
-|---|---|
-| `CONSTITUTION.md` | Non-negotiable rules of the system. Changes require an ADR. |
-| `kernel/` | Conventions: naming, versioning, portability, artifact specs |
-| `frameworks/` | Reusable thinking tools (decision-making, positioning, pricing…) |
-| `prompts/` | Portable prompt library. One file = one prompt = one contract |
-| `agents/` | Agent role definitions. Compose prompts + tools + guardrails |
-| `workflows/` | Multi-step pipelines. Compose agents + prompts + humans |
-| `templates/` | Document skeletons (proposal, brief, ADR, brand book…) |
-| `knowledge/` | Evergreen distilled knowledge, one fact-cluster per file |
-| `decisions/` | Architecture Decision Records — the why-log of the system |
-| `registry/` | Machine-readable index of every artifact (INDEX.md + index.yaml) |
-| `businesses/` | One folder per business instance. `_template/` is the seed |
+## The one idea that matters
 
-## How to use with a local LLM
+**Knowledge first.** Facts live in knowledge layers, judgment lives in taste,
+identity lives in business DNA. Prompts are *compiled* from those sources per
+task, along a fixed chain:
 
-Every prompt/agent/workflow file is self-contained: frontmatter declares the
-contract, the body is the instruction. Minimal loop:
-
-```bash
-# example: run a prompt against ollama
-cat prompts/content/blog-post.md | ollama run llama3.1 "$(cat -)"
+```
+Business DNA → Knowledge → Taste → Framework → Workflow step → Prompt pattern
+                                                                    │
+                                                             compiled prompt
+                                                              (ephemeral)
 ```
 
-Richer runners can parse frontmatter (`inputs`, `context_budget_tokens`) and
-assemble context automatically. The system never assumes a runner smarter than
-"concatenate files and send".
+Contract: [kernel/context-chain.md](kernel/context-chain.md). The chain is
+designed so that concatenating files in order is a valid compiler — no tooling
+required, any tooling welcome.
 
-## Lifecycle of an artifact
+## The loop that compounds
 
-draft → active → deprecated → archived (moved to `archive/`, never deleted).
-Status lives in frontmatter. The registry tracks all of it.
+```
+work happens (business/client) ──> retro (mandatory workflow step)
+        ▲                                     │
+        │                          learning/PROMOTIONS.md (single funnel)
+        │                                     │
+        └──── kernel / knowledge / taste / dna upgraded, versioned ◄──┘
+```
+
+Every completed project must leave Atlas OS better (Constitution Art. III).
+
+## Running on any model
+
+Everything is plain text with declared contracts: inputs, output format,
+`context_budget_tokens`, `min_capability: small|medium|large`. Rules in
+[kernel/portability.md](kernel/portability.md). Minimal runner:
+
+```bash
+# compile a prompt by hand: concatenate the chain, send to any model
+cat businesses/<b>/DNA.md knowledge/<relevant>.md taste/principles.md \
+    agents/patterns/draft-content.md | ollama run <any-model> "$(cat -)"
+```
 
 ## Starting a new business
 
-```
-cp -r businesses/_template businesses/<new-name>
-```
+1. `cp -r businesses/_template businesses/<name>`
+2. Fill the genome files (see [dna/genome.md](dna/genome.md)); DNA.md first.
+3. Register it in `registry/index.yaml`.
+4. Instance is `draft` until the genome is complete.
 
-Fill in `BUSINESS.md`, `brand/voice.md`, `strategy/positioning.md`. Everything
-else inherits from the kernel until you deliberately override it.
+## Taking on a client
+
+1. `cp -r clients/_template clients/<client-name>`
+2. Create an engagement folder, set `owner_business`.
+3. Confidentiality rules: Constitution Art. VII.

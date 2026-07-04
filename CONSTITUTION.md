@@ -1,58 +1,92 @@
 ---
 name: constitution
-version: 1.0.0
+version: 2.0.0
 status: active
 type: kernel-doc
+description: Non-negotiable law of Atlas OS. Amended only by ADR.
 ---
 
-# Constitution
+# Atlas OS Constitution
 
-Non-negotiable rules. Amending this file requires an ADR in `decisions/`
-explaining what changed and why.
+Non-negotiable rules. Amending this file requires an ADR in `decisions/`.
+v2.0.0 per ADR-0003/0004/0005 (fifteen-layer architecture, knowledge-first
+compilation, clients layer).
 
 ## Article I — Ownership of the substrate
 
-1. All artifacts are plain text (Markdown, YAML, CSV). Binary and proprietary
-   formats are outputs, never sources of truth.
-2. The system must remain fully operable offline with only: this repository,
-   git, and a local LLM. Any tool that breaks this is an optional accelerator,
-   never a dependency.
-3. No artifact may reference a SaaS URL as its only home. External resources get
-   a `reference` file with enough context to survive the link dying.
+1. All sources of truth are plain text (Markdown, YAML, JSON) in this git
+   repository. Binary and proprietary formats are outputs or externally-stored
+   assets referenced by metadata manifests — never sources of truth.
+2. Atlas OS must remain fully operable offline with only: this repository,
+   git, and a local LLM. Every other tool is an accelerator, never a
+   dependency.
+3. Vendor-agnostic, permanently. No artifact may name a model vendor as a
+   requirement. Capability is expressed as tiers (`small | medium | large`);
+   tools as abstract names mapped in `agents/tool-map.md`.
+4. External resources get a reference note with enough context to survive the
+   link dying.
 
-## Article II — Compounding
+## Article II — Knowledge first
 
-4. Before creating anything, check the registry. Extend or version an existing
-   artifact rather than duplicating it.
-5. Anything used twice gets extracted into the kernel (prompt, framework,
-   template, or workflow). Anything used once stays in the business instance.
-6. Every completed project ends with a retro: what worked gets promoted into
-   the kernel; what failed gets an ADR or a knowledge note.
+5. Prompts are compiled, never authored as sources (ADR-0004). The compile
+   chain is fixed: **Business DNA → Knowledge → Taste → Framework → Workflow →
+   Prompt pattern**, governed by `kernel/context-chain.md`.
+6. Prompt patterns are the only versioned prompt-like artifacts. They contain
+   structure and slots only. A pattern embedding a business fact, voice rule,
+   or taste judgment is a defect to be fixed on discovery.
+7. Facts live in exactly one place: cross-business facts in `knowledge/`,
+   business facts in that business's `knowledge/`, judgment in `taste/`.
+   Duplication of a fact is a bug.
 
-## Article III — Versioning and history
+## Article III — Compounding
 
-7. Artifacts carry `version:` (semver) and `status:` (draft | active |
-   deprecated | archived) in frontmatter.
-8. Nothing is deleted. Deprecated artifacts move to `archive/` with their
-   history intact.
-9. Significant decisions — architectural, strategic, or irreversible — are
-   recorded as ADRs before or immediately after they are made.
+8. Before creating anything, check the registry. Extend or version an
+   existing artifact rather than duplicating it.
+9. Anything used twice gets promoted toward the kernel through the single
+   funnel: `learning/PROMOTIONS.md` → review → versioned kernel/layer artifact
+   (+ ADR when the change is structural).
+10. Every workflow ends with a retrospective. A workflow without a retro step
+    is invalid. Every completed engagement or project must leave Atlas OS
+    measurably better: a promotion, a knowledge note, a taste refinement, a
+    version bump, or an explicit "nothing learned" entry (rare, suspicious).
 
-## Article IV — Portability contracts
+## Article IV — Versioning and history
 
-10. Every prompt declares: `inputs`, `output` (format + success criteria), and
-    `context_budget_tokens`. A prompt that cannot state its contract is a draft.
-11. Prompts and agents use no vendor-specific syntax or features. Capability
-    tiers (`min_capability: small | medium | large`) express model requirements,
-    never vendor names.
-12. Workflows must degrade gracefully: every automated step names its manual
-    fallback.
+11. Artifacts carry `version:` (semver) and `status:` (draft | active |
+    deprecated | archived) in frontmatter. Contract break = major bump.
+12. Nothing is deleted. Deprecated artifacts move to `archive/`, path-
+    mirrored, history intact.
+13. Significant decisions — architectural, strategic, irreversible — are
+    recorded as ADRs before or immediately after they are made
+    (`frameworks/decision-framework.md` decides which).
 
-## Article V — Kernel and instances
+## Article V — Kernel minimalism
 
-13. The kernel is business-agnostic. Business names, brand voice, and market
-    specifics live only in `businesses/<name>/`.
-14. Instances override the kernel by shadowing paths, never by editing kernel
-    files. A kernel change must benefit (or at least not harm) every instance.
-15. New businesses start from `businesses/_template/`. The template is updated
-    whenever onboarding a real business reveals a gap.
+14. The kernel contains **specs and contracts only** — how things work, never
+    instances of work. Target: readable end-to-end in under 30 minutes.
+15. Kernel changes must benefit (or at least not harm) every business
+    instance. Anything business-specific in the kernel is a defect.
+16. Instances override by shadowing paths, never by editing kernel or shared
+    layers.
+
+## Article VI — Business genome
+
+17. Every business instance implements the genome defined in
+    `dna/genome.md` — same files, same names, same contracts. A business
+    missing genome files is `status: draft` regardless of revenue.
+18. Businesses do not reference each other's internals. Cross-pollination
+    flows through kernel, knowledge, taste, and learning layers only.
+
+## Article VII — Clients and confidentiality
+
+19. Client records live in `clients/`; every engagement declares exactly one
+    `owner_business` (ADR-0005).
+20. Material marked `confidentiality: client` never enters kernel, knowledge,
+    taste, or any other business's folder without an explicit clearance note.
+
+## Article VIII — Humans at the gates
+
+21. Publishing, spending, pricing, and anything irreversible pass a human
+    gate. `human_approval` may never be mapped to automation.
+22. Agents hold autonomous authority only over reversible, low-stakes
+    decisions within their charter (`frameworks/decision-framework.md`).

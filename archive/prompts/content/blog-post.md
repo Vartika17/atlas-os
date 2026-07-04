@@ -1,7 +1,8 @@
 ---
 name: blog-post
 version: 1.0.0
-status: active
+status: archived
+superseded_by: draft-content
 type: prompt
 description: Draft a blog post from a topic + positioning context. Exemplar prompt for the library.
 inputs:

@@ -1,11 +1,11 @@
 ---
 name: content-pipeline
-version: 1.0.0
+version: 2.0.0
 status: active
 type: workflow
-description: Idea → draft → review → publish → retro, for any content type in any business. Exemplar workflow.
-trigger: Content idea logged in businesses/<name>/output/content-queue.md, or weekly cadence pull from queue.
-actors: [human, content-writer-agent]
+description: Idea → compile+draft → critique → human gate → publish → retro. Works for any content type, any business or engagement.
+trigger: Row added to <scope>/output/content-queue.md, or weekly cadence pull.
+actors: [human, content-writer]
 ---
 
 # Content Pipeline
@@ -13,46 +13,47 @@ actors: [human, content-writer-agent]
 ## Steps
 
 ### 1. Queue
-- **Actor:** human (or any agent that spots an opportunity)
-- **Input:** idea, one line + intended audience
-- **Output:** row in `businesses/<name>/output/content-queue.md`
+- **Actor:** human or any agent spotting an opportunity
+- **Input:** idea one-liner + intended audience + format
+- **Output:** row in `<scope>/output/content-queue.md`
 - **Fallback:** — (already manual)
 
-### 2. Draft
+### 2. Compile + draft
 - **Actor:** `agents/content-writer.md`
-- **Input:** queue row + instance voice/positioning files
-- **Output:** `output/drafts/YYYY-MM-DD-slug.md` (frontmatter records prompt
-  name + version used)
-- **Fallback:** human writes draft directly from the same prompt file — open
-  `prompts/content/blog-post.md`, fill placeholders by hand, paste into any LLM
-  or write manually.
+- **Input:** queue row
+- **Chain hints:** `knowledge:` per queue row topic; framework: none by default
+- **Output:** `output/drafts/YYYY-MM-DD-<slug>.md` with `compiled_from` provenance
+- **Fallback:** human compiles by hand — concatenate DNA identity block,
+  relevant knowledge, taste sections, `agents/patterns/draft-content.md` —
+  paste into any model, or write manually from the same stack.
 
-### 3. Review (gate)
-- **Actor:** human — this gate is never automated (tool-map rule)
-- **Input:** draft
-- **Output:** either edits + `status: approved` in frontmatter, or rejection
-  note in the draft explaining why (rejections feed step 5)
+### 3. Critique
+- **Actor:** content-writer (self, via `critique` pattern) — automatic within step 2 handoff
+- **Output:** `-critique.md` beside the draft; verdict gates progression
+- **Fallback:** human runs the four passes from `taste/critique.md` directly.
+
+### 4. Human gate (never automated)
+- **Actor:** human
+- **Input:** draft + critique
+- **Output:** `status: approved` (with edits), or rejection note in the draft
 - **Fallback:** —
 
-### 4. Publish
-- **Actor:** human or publisher automation (when one exists)
-- **Input:** approved draft
-- **Output:** live artifact + `output/published/` copy with `published_url`
-  in frontmatter
-- **Fallback:** manual paste into the site/newsletter tool
+### 5. Publish
+- **Actor:** human or publisher automation when one exists
+- **Output:** live artifact + copy in `output/published/` with `published_url`;
+  binaries get asset manifests
+- **Fallback:** manual paste into site/newsletter tool.
 
-### 5. Retro (the compounding step — do not skip)
-- **Actor:** human, monthly batch
-- **Input:** month's published pieces + rejections + any performance data
-- **Output:**
-  - Prompt improvements → version bump in `prompts/content/`
-  - Recurring rejection cause → new guardrail on the agent
-  - Voice drift discovered → update instance `brand/voice.md`
-  - Anything used twice → promote to kernel (Constitution Art. II)
+### 6. Retro (mandatory — Constitution Art. III)
+- **Actor:** human, monthly batch acceptable
+- **Input:** month's published + rejected pieces + critiques + performance data
+- **Output:** `learning/retros/YYYY-MM-DD-content-<scope>.md` from
+  `learning/retro-template.md`; candidates rowed into `learning/PROMOTIONS.md`;
+  recurring critique findings become taste candidates; compile observations
+  extracted per ADR-0004
 - **Fallback:** —
 
 ## Notes
 
-State lives entirely in files; the pipeline is resumable at any step by anyone.
-A different content type (newsletter, landing page section, proposal) reuses
-this workflow with a different prompt in step 2 — do not fork the workflow.
+State is files; resumable at any step. New content type = same workflow,
+different `format` input — do not fork the workflow.
