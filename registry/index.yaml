@@ -87,6 +87,7 @@ artifacts:
   - {name: assets-readme,       path: assets/README.md,            type: kernel-doc, version: 1.0.0, status: active}
   - {name: clients-readme,      path: clients/README.md,           type: kernel-doc, version: 1.0.0, status: active}
   - {name: knowledge-readme,    path: knowledge/README.md,         type: kernel-doc, version: 1.0.0, status: active}
+  - {name: model-qwen3-8b-2026-07, path: knowledge/models/qwen3-8b-2026-07.md, type: knowledge, version: 1.0.0, status: active}
 decisions:
   - {id: ADR-0001, path: decisions/0001-plain-text-substrate.md,          status: accepted}
   - {id: ADR-0002, path: decisions/0002-kernel-instance-split.md,         status: accepted}
