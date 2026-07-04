@@ -24,7 +24,7 @@ layers:
   - {n: 15, name: archive,      path: archive/}
 artifacts:
   # law + charters
-  - {name: constitution,        path: CONSTITUTION.md,             type: kernel-doc, version: 2.0.0, status: active}
+  - {name: constitution,        path: CONSTITUTION.md,             type: kernel-doc, version: 2.1.0, status: active}
   - {name: north-star,          path: NORTH_STAR.md,               type: kernel-doc, version: 1.0.0, status: active}
   - {name: first-principles,    path: FIRST_PRINCIPLES.md,         type: kernel-doc, version: 1.0.0, status: active}
   # kernel
@@ -38,17 +38,39 @@ artifacts:
   - {name: design-philosophy,   path: taste/DESIGN_PHILOSOPHY.md,  type: taste,      version: 1.0.0, status: active}
   - {name: quality-standard,    path: taste/QUALITY_STANDARD.md,   type: taste,      version: 1.0.0, status: active}
   - {name: quality-benchmarks,  path: taste/QUALITY_BENCHMARKS.md, type: taste,      version: 1.0.0, status: active}
-  - {name: taste-principles,    path: taste/principles.md,         type: taste,      version: 0.1.0, status: draft}
+  - {name: taste-principles,    path: taste/principles.md,         type: taste,      version: 1.0.0, status: active}
+  - {name: taste-rejections,    path: taste/rejections.md,         type: taste,      version: 1.0.0, status: active}
   - {name: critique-method,     path: taste/critique.md,           type: taste,      version: 1.0.0, status: active}
   - {name: taste-anti-patterns, path: taste/anti-patterns.md,      type: taste,      version: 0.1.0, status: draft}
   - {name: taste-references-readme, path: taste/references/README.md, type: kernel-doc, version: 1.0.0, status: active}
+  # taste reference studies (Taste Bootstrap, 2026-07-04; all type: taste, v1.0.0, active)
+  - {name: ref-brand-identity,  path: taste/references/brand-identity.md}
+  - {name: ref-luxury-brands,   path: taste/references/luxury-brands.md}
+  - {name: ref-consumer-brands, path: taste/references/consumer-brands.md}
+  - {name: ref-packaging,       path: taste/references/packaging.md}
+  - {name: ref-websites,        path: taste/references/websites.md}
+  - {name: ref-landing-pages,   path: taste/references/landing-pages.md}
+  - {name: ref-e-commerce,      path: taste/references/e-commerce.md}
+  - {name: ref-saas-products,   path: taste/references/saas-products.md}
+  - {name: ref-typography,      path: taste/references/typography.md}
+  - {name: ref-editorial-design, path: taste/references/editorial-design.md}
+  - {name: ref-ui-ux,           path: taste/references/ui-ux.md}
+  - {name: ref-motion-design,   path: taste/references/motion-design.md}
+  - {name: ref-product-design,  path: taste/references/product-design.md}
+  - {name: ref-architecture,    path: taste/references/architecture.md}
+  - {name: ref-photography,     path: taste/references/photography.md}
+  - {name: ref-advertising,     path: taste/references/advertising.md}
+  - {name: ref-storytelling,    path: taste/references/storytelling.md}
+  - {name: ref-copywriting,     path: taste/references/copywriting.md}
+  - {name: ref-content-strategy, path: taste/references/content-strategy.md}
+  - {name: ref-presentation-design, path: taste/references/presentation-design.md}
   # dna
   - {name: genome,              path: dna/genome.md,               type: kernel-doc, version: 1.0.0, status: active}
   # agents + patterns
   - {name: tool-map,            path: agents/tool-map.md,          type: kernel-doc, version: 1.0.0, status: active}
   - {name: content-writer,      path: agents/content-writer.md,    type: agent,      version: 2.0.0, status: active, min_capability: medium}
-  - {name: draft-content,       path: agents/patterns/draft-content.md, type: pattern, version: 2.0.0, status: active, min_capability: medium}
-  - {name: critique,            path: agents/patterns/critique.md, type: pattern,    version: 1.0.0, status: active, min_capability: medium}
+  - {name: draft-content,       path: agents/patterns/draft-content.md, type: pattern, version: 2.1.0, status: active, min_capability: medium}
+  - {name: critique,            path: agents/patterns/critique.md, type: pattern,    version: 1.1.0, status: active, min_capability: medium}
   # workflows
   - {name: content-pipeline,    path: workflows/content-pipeline.md, type: workflow, version: 2.0.0, status: active}
   # frameworks
@@ -71,5 +93,6 @@ decisions:
   - {id: ADR-0003, path: decisions/0003-atlas-os-fifteen-layers.md,       status: accepted}
   - {id: ADR-0004, path: decisions/0004-knowledge-first-compiled-prompts.md, status: accepted}
   - {id: ADR-0005, path: decisions/0005-clients-first-class-layer.md,     status: accepted}
+  - {id: ADR-0006, path: decisions/0006-github-remote-and-git-strategy.md, status: accepted}
 businesses: []   # planned: nazaria, noblegate, qwikstone, mds-lux, mds-essentials
 clients: []

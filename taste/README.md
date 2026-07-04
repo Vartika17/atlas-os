@@ -18,8 +18,12 @@ retro like everything else.
 |---|---|---|
 | `principles.md` | Positive judgment — what good looks like, in labeled sections | context chain, stage 3 |
 | `critique.md` | Critique methodology — how to evaluate any creative output | review steps in workflows |
-| `anti-patterns.md` | Negative judgment — what we never ship, with reasons | context chain + review |
-| `references/` | Metadata notes on external reference works (no binaries) | human study; taste evolution |
+| `anti-patterns.md` | Negative judgment — defects that never ship, with tells | context chain + review |
+| `rejections.md` | Owner's standing vetoes — directions never pursued | **brief/direction stage**, before work starts |
+| `DESIGN_PHILOSOPHY.md` | Stances behind the rules — decides novel cases | human + agent judgment |
+| `QUALITY_STANDARD.md` | The measurable scorecard + hard blockers | every delivery gate |
+| `QUALITY_BENCHMARKS.md` | What great looks like per artifact class | critique + scorecard dim. 6 |
+| `references/` | Reference studies of world-class work (no binaries) | source for principles; taste evolution |
 
 ## Why rules-and-rubrics, not example dumps
 

@@ -20,7 +20,10 @@ UPPERCASE filename = permanent charter document.
 - [DESIGN_PHILOSOPHY.md](../taste/DESIGN_PHILOSOPHY.md) — stances: design, brand, AI, luxury vs functional…
 - [QUALITY_STANDARD.md](../taste/QUALITY_STANDARD.md) — the 6-dimension scorecard + hard blockers
 - [QUALITY_BENCHMARKS.md](../taste/QUALITY_BENCHMARKS.md) — what great looks like, per artifact class
-- [principles.md](../taste/principles.md) (draft) · [critique.md](../taste/critique.md) · [anti-patterns.md](../taste/anti-patterns.md) (draft) · [references/](../taste/references/README.md)
+- [principles.md](../taste/principles.md) **v1.0.0** — 11 sections distilled from the reference library
+- [rejections.md](../taste/rejections.md) — owner's standing vetoes, checked at direction stage
+- [critique.md](../taste/critique.md) · [anti-patterns.md](../taste/anti-patterns.md) (draft)
+- [references/](../taste/references/README.md) — **20 reference studies** (Taste Bootstrap): brand-identity, luxury-brands, consumer-brands, packaging, websites, landing-pages, e-commerce, saas-products, typography, editorial-design, ui-ux, motion-design, product-design, architecture, photography, advertising, storytelling, copywriting, content-strategy, presentation-design
 
 ## DNA
 - [genome.md](../dna/genome.md) — the structure every business implements
@@ -46,6 +49,7 @@ UPPERCASE filename = permanent charter document.
 - [ADR-0003](../decisions/0003-atlas-os-fifteen-layers.md) fifteen-layer Atlas architecture
 - [ADR-0004](../decisions/0004-knowledge-first-compiled-prompts.md) knowledge-first, compiled prompts
 - [ADR-0005](../decisions/0005-clients-first-class-layer.md) clients as first-class layer
+- [ADR-0006](../decisions/0006-github-remote-and-git-strategy.md) GitHub remote, trunk-based git, secrets policy
 - [TEMPLATE](../decisions/TEMPLATE.md)
 
 ## Assets · Clients · Knowledge

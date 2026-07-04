@@ -1,6 +1,6 @@
 ---
 name: critique
-version: 1.0.0
+version: 1.1.0
 status: active
 type: pattern
 description: Runs the four-pass critique from taste/critique.md against any creative output.
@@ -23,7 +23,7 @@ output: |
   the end: {verdict, biggest_problem, recurring_candidates: []}.
 context_budget_tokens: 6000
 min_capability: medium
-taste_sections: [restraint, hierarchy, specificity, honesty, craft]
+taste_sections: [systems, consistency, restraint, hierarchy, specificity, honesty, protagonist, degradation, durability, friction, craft]
 ---
 
 {{identity}}

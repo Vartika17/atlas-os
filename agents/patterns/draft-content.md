@@ -1,6 +1,6 @@
 ---
 name: draft-content
-version: 2.0.0
+version: 2.1.0
 status: active
 type: pattern
 description: Universal content-drafting skeleton. Compiled per task via the context chain; replaces prompt blog-post@1.x (archived).
@@ -29,7 +29,7 @@ output: |
   facts appear as [VERIFY: ...] markers, never guesses.
 context_budget_tokens: 4000
 min_capability: medium
-taste_sections: [restraint, hierarchy, specificity, honesty]
+taste_sections: [protagonist, specificity, honesty, hierarchy, restraint]
 ---
 
 {{identity}}
