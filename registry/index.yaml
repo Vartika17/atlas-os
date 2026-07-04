@@ -95,5 +95,27 @@ decisions:
   - {id: ADR-0005, path: decisions/0005-clients-first-class-layer.md,     status: accepted}
   - {id: ADR-0006, path: decisions/0006-github-remote-and-git-strategy.md, status: accepted}
   - {id: ADR-0007, path: decisions/0007-two-ceremonies-and-genome-tiers.md, status: accepted}
-businesses: []   # planned: nazaria, noblegate, qwikstone, mds-lux, mds-essentials
+businesses:
+  - name: nazaria
+    stage: validating
+    status: draft   # active when core-5 [VERIFY] markers resolved by owner
+    genome:
+      # core-5 (validating tier, ADR-0007) — authored drafts
+      - {name: nazaria-dna,         path: businesses/nazaria/DNA.md,         type: genome-doc, version: 0.1.0, status: draft}
+      - {name: nazaria-positioning, path: businesses/nazaria/positioning.md, type: genome-doc, version: 0.1.0, status: draft}
+      - {name: nazaria-personas,    path: businesses/nazaria/personas.md,    type: genome-doc, version: 0.1.0, status: draft}
+      - {name: nazaria-offers,      path: businesses/nazaria/offers.md,      type: genome-doc, version: 0.1.0, status: draft}
+      - {name: nazaria-metrics,     path: businesses/nazaria/metrics.md,     type: genome-doc, version: 0.1.0, status: draft}
+      # above-tier stubs (allowed as stubs per ADR-0007)
+      - {name: nazaria-voice,       path: businesses/nazaria/voice.md,       type: genome-doc, version: 2.0.0, status: draft}
+      - {name: nazaria-products,    path: businesses/nazaria/products.md,    type: genome-doc, version: 1.0.0, status: draft}
+      - {name: nazaria-services,    path: businesses/nazaria/services.md,    type: genome-doc, version: 1.0.0, status: draft}
+      - {name: nazaria-pricing,     path: businesses/nazaria/pricing.md,     type: genome-doc, version: 1.0.0, status: draft}
+      - {name: nazaria-competitors, path: businesses/nazaria/competitors.md, type: genome-doc, version: 1.0.0, status: draft}
+      - {name: nazaria-website,     path: businesses/nazaria/website.md,     type: genome-doc, version: 1.0.0, status: draft}
+      - {name: nazaria-sales,       path: businesses/nazaria/sales.md,       type: genome-doc, version: 1.0.0, status: draft}
+      - {name: nazaria-marketing,   path: businesses/nazaria/marketing.md,   type: genome-doc, version: 1.0.0, status: draft}
+      - {name: nazaria-content,     path: businesses/nazaria/content.md,     type: genome-doc, version: 1.0.0, status: draft}
+      - {name: nazaria-automation,  path: businesses/nazaria/automation.md,  type: genome-doc, version: 1.0.0, status: draft}
+  # planned: noblegate, qwikstone, mds-lux, mds-essentials
 clients: []
