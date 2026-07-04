@@ -24,13 +24,13 @@ layers:
   - {n: 15, name: archive,      path: archive/}
 artifacts:
   # law + charters
-  - {name: constitution,        path: CONSTITUTION.md,             type: kernel-doc, version: 2.1.0, status: active}
+  - {name: constitution,        path: CONSTITUTION.md,             type: kernel-doc, version: 2.2.0, status: active}
   - {name: north-star,          path: NORTH_STAR.md,               type: kernel-doc, version: 1.0.0, status: active}
   - {name: first-principles,    path: FIRST_PRINCIPLES.md,         type: kernel-doc, version: 1.0.0, status: active}
   # kernel
   - {name: artifact-spec,       path: kernel/artifact-spec.md,     type: kernel-doc, version: 2.0.0, status: active}
   - {name: context-chain,       path: kernel/context-chain.md,     type: kernel-doc, version: 1.0.0, status: active}
-  - {name: evolution-rules,     path: kernel/EVOLUTION_RULES.md,   type: kernel-doc, version: 2.0.0, status: active}
+  - {name: evolution-rules,     path: kernel/EVOLUTION_RULES.md,   type: kernel-doc, version: 2.1.0, status: active}
   - {name: versioning,          path: kernel/versioning.md,        type: kernel-doc, version: 1.0.0, status: active}
   - {name: portability,         path: kernel/portability.md,       type: kernel-doc, version: 1.0.0, status: active}
   # taste
@@ -65,7 +65,7 @@ artifacts:
   - {name: ref-content-strategy, path: taste/references/content-strategy.md}
   - {name: ref-presentation-design, path: taste/references/presentation-design.md}
   # dna
-  - {name: genome,              path: dna/genome.md,               type: kernel-doc, version: 1.0.0, status: active}
+  - {name: genome,              path: dna/genome.md,               type: kernel-doc, version: 1.1.0, status: active}
   # agents + patterns
   - {name: tool-map,            path: agents/tool-map.md,          type: kernel-doc, version: 1.0.0, status: active}
   - {name: content-writer,      path: agents/content-writer.md,    type: agent,      version: 2.0.0, status: active, min_capability: medium}
@@ -77,7 +77,7 @@ artifacts:
   - {name: thinking-model,      path: frameworks/THINKING_MODEL.md, type: framework,  version: 1.0.0, status: active}
   - {name: decision-framework,  path: frameworks/decision-framework.md, type: framework, version: 1.0.0, status: active}
   # learning
-  - {name: learning-readme,     path: learning/README.md,          type: kernel-doc, version: 1.0.0, status: active}
+  - {name: learning-readme,     path: learning/README.md,          type: kernel-doc, version: 1.1.0, status: active}
   - {name: retro-template,      path: learning/retro-template.md,  type: template,   version: 2.0.0, status: active}
   # decisions
   - {name: adr-template,        path: decisions/TEMPLATE.md,       type: template,   version: 1.0.0, status: active}
@@ -94,5 +94,6 @@ decisions:
   - {id: ADR-0004, path: decisions/0004-knowledge-first-compiled-prompts.md, status: accepted}
   - {id: ADR-0005, path: decisions/0005-clients-first-class-layer.md,     status: accepted}
   - {id: ADR-0006, path: decisions/0006-github-remote-and-git-strategy.md, status: accepted}
+  - {id: ADR-0007, path: decisions/0007-two-ceremonies-and-genome-tiers.md, status: accepted}
 businesses: []   # planned: nazaria, noblegate, qwikstone, mds-lux, mds-essentials
 clients: []

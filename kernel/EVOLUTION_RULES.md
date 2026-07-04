@@ -1,6 +1,6 @@
 ---
 name: evolution-rules
-version: 2.0.0
+version: 2.1.0
 status: active
 type: kernel-doc
 description: How Atlas OS grows, promotes, resists complexity, and prunes. Supersedes and absorbs promotion@1.0.0.
@@ -37,7 +37,7 @@ mechanisms, not the library of content.
 ## 3. When knowledge is promoted
 
 The funnel is single and mandatory: retro → `learning/PROMOTIONS.md` row →
-weekly review → versioned artifact in the target layer.
+monthly Atlas Hour review (ADR-0007) → versioned artifact in the target layer.
 
 - **Two-use test:** promoted on second use or clearly imminent second use.
   Speculative generalization is rejected as inventory, not investment.

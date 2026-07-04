@@ -76,7 +76,7 @@ must demand them).
 | Capability | Status |
 |---|---|
 | Manual-fallback doctrine (every automation reversible) | Current |
-| Registry lint + regeneration script (frontmatter → index.yaml) | Planned |
+| Registry lint script (frontmatter ↔ index.yaml sync, spec validation) | Current |
 | Compile script (chain assembly from a task file) | Planned |
 | Scheduled cadences (weekly review, monthly retro, quarterly prune) | Planned |
 | Cross-tool automation per business (genome automation.md executed) | Planned |

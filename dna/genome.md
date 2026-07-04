@@ -1,9 +1,9 @@
 ---
 name: genome
-version: 1.0.0
+version: 1.1.0
 status: active
 type: kernel-doc
-description: The standard structure every business instance must implement. Constitution Art. VI.
+description: The standard structure every business instance must implement, tiered by stage (ADR-0007). Constitution Art. VI.
 ---
 
 # Business Genome
@@ -55,10 +55,21 @@ consumed together at every compile, and identity fragments drift when split.
                                 what stage 1 of every compile injects
 ```
 
+## Tiers (ADR-0007)
+
+| Stage | Required tier |
+|---|---|
+| idea | none — a note in the portfolio backlog is enough |
+| validating | **Core genome:** `DNA.md`, `positioning.md`, `personas.md`, `offers.md`, `metrics.md` — honest and non-stub |
+| operating, scaling | **Full genome:** all files and dirs below |
+
+Files above the current tier may exist as stubs without penalty — structure
+trails reality. A business below its tier is `draft`.
+
 ## Conformance
 
-- Instance `status: active` requires every genome file present and non-stub.
-  Until then: `draft` (Constitution Art. VI), whatever the revenue says.
+- Instance `status: active` requires its stage's tier present and non-stub
+  (Constitution Art. VI), whatever the revenue says.
 - Genome changes are kernel changes: ADR + version bump here + template
   update + migration note for existing instances, same commit.
 - A business may add files beyond the genome; it may never rename or repurpose

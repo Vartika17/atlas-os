@@ -1,6 +1,6 @@
 ---
 name: constitution
-version: 2.1.0
+version: 2.2.0
 status: active
 type: kernel-doc
 description: Non-negotiable law of Atlas OS. Amended only by ADR.
@@ -75,9 +75,10 @@ compilation, clients layer). v2.1.0 per ADR-0006 (remote + secrets policy).
 
 ## Article VI — Business genome
 
-18. Every business instance implements the genome defined in
-    `dna/genome.md` — same files, same names, same contracts. A business
-    missing genome files is `status: draft` regardless of revenue.
+18. Every business instance implements the genome defined in `dna/genome.md`
+    at the tier matching its stage (ADR-0007): core genome for `validating`,
+    full genome for `operating` and beyond. A business below its tier is
+    `status: draft` regardless of revenue.
 19. Businesses do not reference each other's internals. Cross-pollination
     flows through kernel, knowledge, taste, and learning layers only.
 
