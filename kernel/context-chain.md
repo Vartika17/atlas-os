@@ -1,6 +1,6 @@
 ---
 name: context-chain
-version: 1.0.0
+version: 1.1.0
 status: active
 type: kernel-doc
 description: The prompt compiler contract — how DNA, knowledge, taste, frameworks, workflows, and patterns assemble into an ephemeral prompt.
@@ -20,13 +20,26 @@ without a major version bump here.
 |---|---|---|---|---|
 | 1 | Identity | `businesses/<b>/DNA.md` — the Compiled Identity Block only | 300 | **never** |
 | 2 | Knowledge | task-relevant notes: instance `knowledge/` first, then shared `knowledge/` | 1200 | trim to top-3 facts, never to zero |
-| 3 | Taste | `taste/principles.md` slice + the one relevant critique rubric | 600 | drop for `small` tier |
+| 3 | Taste | `taste/principles.md` slice + the one relevant critique rubric | 800 | drop for `small` tier |
 | 4 | Framework | the framework the workflow step names, if any | 400 | drop for `small` tier |
 | 5 | Task contract | the workflow step's input/output contract | 200 | **never** |
 | 6 | Pattern | `agents/patterns/<pattern>.md` body with slots filled | remainder | **never** |
 
-Default total: 4000 tokens (portability.md). Stages 1, 5, 6 are the invariant
-core — a compiled prompt is invalid without all three.
+Default total: 4200 tokens (portability.md). Stages 1, 5, 6 are the invariant
+core — a compiled prompt is invalid without all three. Stage-3 budget is 800
+to hold up to ~5 taste sections at ≤150 tokens each; a pattern naming more
+than 5 sections must justify it or trim (fixed after compile test 01, which
+found 5 sections overflowing the old 600 budget).
+
+## Capability gate (added after compile test 01)
+
+A pattern MUST NOT be compiled onto a model below its declared
+`min_capability`. Compile test 01 ran `draft-content` (min medium) on an 8B
+(small) and it fabricated a statistic under the specificity instruction —
+the tier tag is a hard contract, not advice. Runners refuse the compile and
+escalate the tier; humans compiling by hand do the same. Deliberate
+below-tier runs are permitted ONLY as tagged experiments (output `status`
+never `active`), never as production.
 
 ## Degradation ladder (small models / tight context)
 

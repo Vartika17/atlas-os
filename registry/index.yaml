@@ -3,7 +3,7 @@
 generated: manual   # future: lint script regenerates and verifies
 os:
   name: atlas-os
-  version: 0.3.0
+  version: 0.4.0
 conventions:
   uppercase-filenames: permanent charter documents (philosophy/standards); lowercase = operational artifacts
 layers:
@@ -29,16 +29,16 @@ artifacts:
   - {name: first-principles,    path: FIRST_PRINCIPLES.md,         type: kernel-doc, version: 1.0.0, status: active}
   # kernel
   - {name: artifact-spec,       path: kernel/artifact-spec.md,     type: kernel-doc, version: 2.0.0, status: active}
-  - {name: context-chain,       path: kernel/context-chain.md,     type: kernel-doc, version: 1.0.0, status: active}
+  - {name: context-chain,       path: kernel/context-chain.md,     type: kernel-doc, version: 1.1.0, status: active}
   - {name: evolution-rules,     path: kernel/EVOLUTION_RULES.md,   type: kernel-doc, version: 2.1.0, status: active}
   - {name: versioning,          path: kernel/versioning.md,        type: kernel-doc, version: 1.0.0, status: active}
-  - {name: portability,         path: kernel/portability.md,       type: kernel-doc, version: 1.0.0, status: active}
+  - {name: portability,         path: kernel/portability.md,       type: kernel-doc, version: 1.1.0, status: active}
   # taste
   - {name: taste-readme,        path: taste/README.md,             type: kernel-doc, version: 1.0.0, status: active}
   - {name: design-philosophy,   path: taste/DESIGN_PHILOSOPHY.md,  type: taste,      version: 1.0.0, status: active}
   - {name: quality-standard,    path: taste/QUALITY_STANDARD.md,   type: taste,      version: 1.0.0, status: active}
   - {name: quality-benchmarks,  path: taste/QUALITY_BENCHMARKS.md, type: taste,      version: 1.0.0, status: active}
-  - {name: taste-principles,    path: taste/principles.md,         type: taste,      version: 1.0.0, status: active}
+  - {name: taste-principles,    path: taste/principles.md,         type: taste,      version: 1.1.0, status: active}
   - {name: taste-rejections,    path: taste/rejections.md,         type: taste,      version: 1.0.0, status: active}
   - {name: critique-method,     path: taste/critique.md,           type: taste,      version: 1.0.0, status: active}
   - {name: taste-anti-patterns, path: taste/anti-patterns.md,      type: taste,      version: 0.1.0, status: draft}
@@ -88,6 +88,7 @@ artifacts:
   - {name: clients-readme,      path: clients/README.md,           type: kernel-doc, version: 1.0.0, status: active}
   - {name: knowledge-readme,    path: knowledge/README.md,         type: kernel-doc, version: 1.0.0, status: active}
   - {name: model-qwen3-8b-2026-07, path: knowledge/models/qwen3-8b-2026-07.md, type: knowledge, version: 1.0.0, status: active}
+  - {name: ops-windows-text-encoding, path: knowledge/ops/windows-text-encoding.md, type: knowledge, version: 1.0.0, status: active}
 decisions:
   - {id: ADR-0001, path: decisions/0001-plain-text-substrate.md,          status: accepted}
   - {id: ADR-0002, path: decisions/0002-kernel-instance-split.md,         status: accepted}

@@ -1,6 +1,6 @@
 ---
 name: portability
-version: 1.0.0
+version: 1.1.0
 status: active
 type: kernel-doc
 description: Rules that keep every artifact runnable on local LLMs and any future model.
@@ -10,6 +10,14 @@ description: Rules that keep every artifact runnable on local LLMs and any futur
 
 Target: every prompt, agent, and workflow works with (a) a local model via
 Ollama/llama.cpp/LM Studio, (b) any cloud model, (c) a human with a text editor.
+
+## Local runner note (from compile test 01)
+
+Scripted local runs use the HTTP API (`POST localhost:11434/api/generate`
+for Ollama), never the interactive `ollama run "<prompt>"` form — the latter
+hung indefinitely on the reference Windows machine. See
+`knowledge/models/` for per-model runtime notes and the Windows text-encoding
+rule (`knowledge/ops/windows-text-encoding.md`).
 
 ## Prompt portability
 

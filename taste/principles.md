@@ -1,6 +1,6 @@
 ---
 name: taste-principles
-version: 1.0.0
+version: 1.1.0
 status: active
 type: taste
 description: Positive creative judgment in labeled sections, distilled from 20 reference studies of multi-decade excellence (taste/references/). Owner calibration refines by version bump.
@@ -57,7 +57,10 @@ Concrete beats abstract, always. One researched, verifiable detail
 outperforms any stack of adjectives, and the reader's self-drawn conclusion
 beats your stated one. Claims travel with their proof in the same breath.
 Named humans with numbers beat logo walls and star ratings. Test: strike
-every adjective — does the argument still stand?
+every adjective — does the argument still stand? Caveat (compile test 01):
+this principle pressures weak models to *invent* specifics (fake statistics)
+— every number must be quoted from supplied facts or omitted, never
+generated to satisfy the rule.
 
 ## honesty
 

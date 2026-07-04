@@ -20,6 +20,11 @@ current. Changing runtimes = editing this file only.
 | `human_approval` | AskUserQuestion / pause | CLI prompt in runner | it's already a human |
 | `git_commit` | Bash git | Bash git | Bash git |
 
+| `model_run` | (cloud API of the session) | Ollama HTTP API: POST localhost:11434/api/generate | paste prompt into any chat UI |
+
 Rules:
 - New abstract tool names require a row here before any agent may declare them.
 - `human_approval` may never be mapped to anything automated.
+- `model_run` local: use the HTTP API, not interactive `ollama run` (hangs on
+  Windows — compile test 01). Respect the pattern's `min_capability`
+  (kernel/context-chain.md capability gate).

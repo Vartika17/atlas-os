@@ -36,7 +36,7 @@ must demand them).
 ## Business
 | Capability | Status |
 |---|---|
-| Business instantiation from genome in under a day | Current |
+| Business instantiation from genome (scripted: registry/new-business.ps1) | Current |
 | Offer construction (products/services → offers → pricing reasoning) | Current |
 | Business model stress-testing (pre-mortem via THINKING_MODEL inversion) | Planned |
 | Partnership/collaboration evaluation framework | Future |
