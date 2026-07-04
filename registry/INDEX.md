@@ -5,9 +5,10 @@ commit as the artifact they describe. Atlas OS **v0.3.0**.
 UPPERCASE filename = permanent charter document.
 
 ## Charters (root)
-- [CONSTITUTION.md](../CONSTITUTION.md) v2.0.0 — the law
-- [NORTH_STAR.md](../NORTH_STAR.md) — why Atlas exists; what it never becomes
+- [CONSTITUTION.md](../CONSTITUTION.md) v2.2.0 — the law
+- [NORTH_STAR.md](../NORTH_STAR.md) v1.1.0 — why Atlas exists; the 2035 rule
 - [FIRST_PRINCIPLES.md](../FIRST_PRINCIPLES.md) — the ten irreducibles
+- [BUSINESS_COMPILER.md](../BUSINESS_COMPILER.md) — the toolchain charter (ADR-0008)
 
 ## Kernel
 - [kernel/artifact-spec.md](../kernel/artifact-spec.md) v2.0.0 — frontmatter contracts
@@ -27,6 +28,7 @@ UPPERCASE filename = permanent charter document.
 
 ## DNA
 - [genome.md](../dna/genome.md) — the structure every business implements
+- [lifecycle.md](../dna/lifecycle.md) — the state machine idea → sunset, with stage contracts
 
 ## Agents & Patterns
 - [content-writer](../agents/content-writer.md) v2 — compiles chain, drafts, self-critiques, never publishes

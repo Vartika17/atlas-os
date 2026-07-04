@@ -1,6 +1,6 @@
 ---
 name: north-star
-version: 1.0.0
+version: 1.1.0
 status: active
 type: kernel-doc
 description: Why Atlas OS exists, what it refuses to become, and what must still be true in 20 years.
@@ -46,6 +46,18 @@ MD's Lux, MD's Essentials, and everything not yet imagined.
   everything irreversible.
 - **Vendor property.** Never dependent on any model, platform, or format that
   one company can kill.
+
+## The 2035 rule (ADR-0008)
+
+Design as if models in 2035 are 100× today's. Then procedure — how to
+write, design, launch — approaches free, because every competitor's model
+knows it too. What appreciates is state no model can derive: the owner's
+calibrated taste, proprietary market knowledge, decision history, and
+trust records. Therefore: **maximize owner-specific state, minimize
+generic procedure.** Better models must make Atlas cheaper to run and its
+state more valuable to own — never obsolete. The Business Compiler
+(BUSINESS_COMPILER.md) is Atlas's toolchain in service of this; businesses
+themselves are processes the OS runs for life (dna/lifecycle.md).
 
 ## Still true in 20 years
 

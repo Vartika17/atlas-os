@@ -25,7 +25,8 @@ layers:
 artifacts:
   # law + charters
   - {name: constitution,        path: CONSTITUTION.md,             type: kernel-doc, version: 2.2.0, status: active}
-  - {name: north-star,          path: NORTH_STAR.md,               type: kernel-doc, version: 1.0.0, status: active}
+  - {name: north-star,          path: NORTH_STAR.md,               type: kernel-doc, version: 1.1.0, status: active}
+  - {name: business-compiler,   path: BUSINESS_COMPILER.md,        type: kernel-doc, version: 1.0.0, status: active}
   - {name: first-principles,    path: FIRST_PRINCIPLES.md,         type: kernel-doc, version: 1.0.0, status: active}
   # kernel
   - {name: artifact-spec,       path: kernel/artifact-spec.md,     type: kernel-doc, version: 2.0.0, status: active}
@@ -66,6 +67,7 @@ artifacts:
   - {name: ref-presentation-design, path: taste/references/presentation-design.md}
   # dna
   - {name: genome,              path: dna/genome.md,               type: kernel-doc, version: 1.1.0, status: active}
+  - {name: lifecycle,           path: dna/lifecycle.md,            type: kernel-doc, version: 1.0.0, status: active}
   # agents + patterns
   - {name: tool-map,            path: agents/tool-map.md,          type: kernel-doc, version: 1.0.0, status: active}
   - {name: content-writer,      path: agents/content-writer.md,    type: agent,      version: 2.0.0, status: active, min_capability: medium}
@@ -82,7 +84,7 @@ artifacts:
   # decisions
   - {name: adr-template,        path: decisions/TEMPLATE.md,       type: template,   version: 1.0.0, status: active}
   # registry
-  - {name: capability-map,      path: registry/CAPABILITY_MAP.md,  type: kernel-doc, version: 1.0.0, status: active}
+  - {name: capability-map,      path: registry/CAPABILITY_MAP.md,  type: kernel-doc, version: 2.0.0, status: active}
   # assets / clients / knowledge charters
   - {name: assets-readme,       path: assets/README.md,            type: kernel-doc, version: 1.0.0, status: active}
   - {name: clients-readme,      path: clients/README.md,           type: kernel-doc, version: 1.0.0, status: active}
@@ -97,6 +99,7 @@ decisions:
   - {id: ADR-0005, path: decisions/0005-clients-first-class-layer.md,     status: accepted}
   - {id: ADR-0006, path: decisions/0006-github-remote-and-git-strategy.md, status: accepted}
   - {id: ADR-0007, path: decisions/0007-two-ceremonies-and-genome-tiers.md, status: accepted}
+  - {id: ADR-0008, path: decisions/0008-compiler-as-toolchain.md, status: accepted}
 businesses:
   - name: nazaria
     stage: validating

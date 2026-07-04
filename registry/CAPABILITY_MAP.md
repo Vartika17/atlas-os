@@ -1,17 +1,48 @@
 ---
 name: capability-map
-version: 1.0.0
+version: 2.0.0
 status: active
 type: kernel-doc
-description: Every capability Atlas OS possesses or intends to possess over the next decade. Statuses — Current (works today), Planned (next ~2 years, event identified), Future (decade horizon, no committed date).
+description: Capability roadmap prioritized by business leverage across the lifecycle (dna/lifecycle.md), plus the 14-domain inventory. Current / Next / Future.
 ---
 
 # Capability Map
 
-Reviewed at the quarterly pruning review. A capability is **Current** only
-if a workflow/agent/framework in the registry actually delivers it today —
-aspiration is Planned/Future. Additions obey EVOLUTION_RULES §4 (an event
-must demand them).
+Reviewed at the quarterly Deep Service. A capability is **Current** only if
+a registered artifact delivers it today. Additions obey EVOLUTION_RULES §4.
+v2.0.0 (ADR-0008): prioritized by **business leverage along the lifecycle**,
+not technical interest.
+
+## Roadmap by leverage
+
+**Current (proven on real work):**
+business definition (genome, validated with Nazaria) · prompt compilation +
+capability gates (context chain) · quality gating (scorecard + benchmarks,
+caught a fabrication) · taste system (principles from 60 exemplars +
+rejections) · content pipeline end-to-end · business instantiation script ·
+registry lint · learning loop (first Atlas Hour completed) · local-model
+operation (tested, numbers recorded)
+
+**Next (unlocked by the very next real events — highest leverage first):**
+1. **Validation-loop support** — conversation-capture workflow, objection
+   log → the loop Nazaria enters next (lifecycle stage 4)
+2. **Discovery workflow** — research → known/assumed/unknown synthesis with
+   kill criteria (stage 2; needed for business #2)
+3. **Identity-system workflow** — direction brief → mark/type/color rules →
+   manifested assets, benchmark-gated (stage 5; Nazaria's own identity is
+   the trigger event)
+4. **Website workflow** — strategy → copy → build, 5-second-test gated
+   (stage 5)
+5. **Measurement ingestion** — metrics.md review-log automation (stage 8)
+6. **Proposal + outreach patterns** — first client engagement triggers
+
+**Future (triggered, not scheduled — see BUSINESS_COMPILER.md Missing):**
+simulation/pre-mortem harness · sunset playbook · delegation/SOP export ·
+portfolio finance view · AI-native interface layer (agent-to-agent
+commerce) · moat audit at Deep Service · house-model fine-tuning on Atlas
+corpus
+
+## Inventory by domain
 
 ## Branding
 | Capability | Status |
