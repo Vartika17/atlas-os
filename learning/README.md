@@ -26,7 +26,7 @@ here before its lessons go anywhere else.
 3. Weekly review: promote (to knowledge/taste/frameworks/agents/workflows/dna,
    rarely kernel), reject-with-reason, or hold.
 4. Promotions land as versioned artifacts; structural ones get ADRs.
-   Full rules: `kernel/promotion.md`.
+   Full rules: `kernel/EVOLUTION_RULES.md`.
 
 ## What counts as learning
 

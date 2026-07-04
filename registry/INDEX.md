@@ -1,17 +1,25 @@
 # Atlas OS Registry (human view)
 
 Canonical machine view: [index.yaml](index.yaml). Both update in the same
-commit as the artifact they describe. Atlas OS **v0.2.0**.
+commit as the artifact they describe. Atlas OS **v0.3.0**.
+UPPERCASE filename = permanent charter document.
 
-## Law & Kernel
+## Charters (root)
 - [CONSTITUTION.md](../CONSTITUTION.md) v2.0.0 — the law
+- [NORTH_STAR.md](../NORTH_STAR.md) — why Atlas exists; what it never becomes
+- [FIRST_PRINCIPLES.md](../FIRST_PRINCIPLES.md) — the ten irreducibles
+
+## Kernel
 - [kernel/artifact-spec.md](../kernel/artifact-spec.md) v2.0.0 — frontmatter contracts
 - [kernel/context-chain.md](../kernel/context-chain.md) — **the prompt compiler contract**
-- [kernel/promotion.md](../kernel/promotion.md) — the funnel into shared layers
+- [kernel/EVOLUTION_RULES.md](../kernel/EVOLUTION_RULES.md) v2 — growth, promotion, pruning (supersedes promotion.md)
 - [kernel/versioning.md](../kernel/versioning.md) · [kernel/portability.md](../kernel/portability.md)
 
 ## Taste
 - [README](../taste/README.md) — charter
+- [DESIGN_PHILOSOPHY.md](../taste/DESIGN_PHILOSOPHY.md) — stances: design, brand, AI, luxury vs functional…
+- [QUALITY_STANDARD.md](../taste/QUALITY_STANDARD.md) — the 6-dimension scorecard + hard blockers
+- [QUALITY_BENCHMARKS.md](../taste/QUALITY_BENCHMARKS.md) — what great looks like, per artifact class
 - [principles.md](../taste/principles.md) (draft) · [critique.md](../taste/critique.md) · [anti-patterns.md](../taste/anti-patterns.md) (draft) · [references/](../taste/references/README.md)
 
 ## DNA
@@ -26,6 +34,7 @@ commit as the artifact they describe. Atlas OS **v0.2.0**.
 - [content-pipeline](../workflows/content-pipeline.md) v2 — queue → compile+draft → critique → human gate → publish → retro
 
 ## Frameworks
+- [THINKING_MODEL.md](../frameworks/THINKING_MODEL.md) — the 7-step reasoning sequence before any output
 - [decision-framework](../frameworks/decision-framework.md) — reversibility × stakes
 
 ## Learning
@@ -44,6 +53,7 @@ commit as the artifact they describe. Atlas OS **v0.2.0**.
 - [clients/README](../clients/README.md) — profiles + business-owned engagements
 - [knowledge/README](../knowledge/README.md) — distilled cross-business facts
 
-## Businesses
+## Capability & Businesses
+- [CAPABILITY_MAP.md](CAPABILITY_MAP.md) — Current / Planned / Future across 14 domains
 - `_template/` implements [genome](../dna/genome.md). No live instances yet.
 - Planned: Nazaria, NobleGate, Qwikstone, MD's Lux, MD's Essentials.

@@ -1,7 +1,8 @@
 ---
 name: promotion
 version: 1.0.0
-status: active
+status: archived
+superseded_by: evolution-rules
 type: kernel-doc
 description: The single funnel by which anything becomes shared — instance → learning queue → layer → (rarely) kernel.
 ---

@@ -3,7 +3,9 @@
 generated: manual   # future: lint script regenerates and verifies
 os:
   name: atlas-os
-  version: 0.2.0
+  version: 0.3.0
+conventions:
+  uppercase-filenames: permanent charter documents (philosophy/standards); lowercase = operational artifacts
 layers:
   - {n: 1,  name: constitution, path: CONSTITUTION.md}
   - {n: 2,  name: kernel,       path: kernel/}
@@ -21,15 +23,21 @@ layers:
   - {n: 14, name: registry,     path: registry/}
   - {n: 15, name: archive,      path: archive/}
 artifacts:
-  # law + kernel
+  # law + charters
   - {name: constitution,        path: CONSTITUTION.md,             type: kernel-doc, version: 2.0.0, status: active}
+  - {name: north-star,          path: NORTH_STAR.md,               type: kernel-doc, version: 1.0.0, status: active}
+  - {name: first-principles,    path: FIRST_PRINCIPLES.md,         type: kernel-doc, version: 1.0.0, status: active}
+  # kernel
   - {name: artifact-spec,       path: kernel/artifact-spec.md,     type: kernel-doc, version: 2.0.0, status: active}
   - {name: context-chain,       path: kernel/context-chain.md,     type: kernel-doc, version: 1.0.0, status: active}
-  - {name: promotion,           path: kernel/promotion.md,         type: kernel-doc, version: 1.0.0, status: active}
+  - {name: evolution-rules,     path: kernel/EVOLUTION_RULES.md,   type: kernel-doc, version: 2.0.0, status: active}
   - {name: versioning,          path: kernel/versioning.md,        type: kernel-doc, version: 1.0.0, status: active}
   - {name: portability,         path: kernel/portability.md,       type: kernel-doc, version: 1.0.0, status: active}
   # taste
   - {name: taste-readme,        path: taste/README.md,             type: kernel-doc, version: 1.0.0, status: active}
+  - {name: design-philosophy,   path: taste/DESIGN_PHILOSOPHY.md,  type: taste,      version: 1.0.0, status: active}
+  - {name: quality-standard,    path: taste/QUALITY_STANDARD.md,   type: taste,      version: 1.0.0, status: active}
+  - {name: quality-benchmarks,  path: taste/QUALITY_BENCHMARKS.md, type: taste,      version: 1.0.0, status: active}
   - {name: taste-principles,    path: taste/principles.md,         type: taste,      version: 0.1.0, status: draft}
   - {name: critique-method,     path: taste/critique.md,           type: taste,      version: 1.0.0, status: active}
   - {name: taste-anti-patterns, path: taste/anti-patterns.md,      type: taste,      version: 0.1.0, status: draft}
@@ -44,12 +52,15 @@ artifacts:
   # workflows
   - {name: content-pipeline,    path: workflows/content-pipeline.md, type: workflow, version: 2.0.0, status: active}
   # frameworks
+  - {name: thinking-model,      path: frameworks/THINKING_MODEL.md, type: framework,  version: 1.0.0, status: active}
   - {name: decision-framework,  path: frameworks/decision-framework.md, type: framework, version: 1.0.0, status: active}
   # learning
   - {name: learning-readme,     path: learning/README.md,          type: kernel-doc, version: 1.0.0, status: active}
   - {name: retro-template,      path: learning/retro-template.md,  type: template,   version: 2.0.0, status: active}
   # decisions
   - {name: adr-template,        path: decisions/TEMPLATE.md,       type: template,   version: 1.0.0, status: active}
+  # registry
+  - {name: capability-map,      path: registry/CAPABILITY_MAP.md,  type: kernel-doc, version: 1.0.0, status: active}
   # assets / clients / knowledge charters
   - {name: assets-readme,       path: assets/README.md,            type: kernel-doc, version: 1.0.0, status: active}
   - {name: clients-readme,      path: clients/README.md,           type: kernel-doc, version: 1.0.0, status: active}
